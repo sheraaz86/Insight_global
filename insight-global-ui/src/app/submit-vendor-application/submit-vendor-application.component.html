@@ -1,0 +1,45 @@
+<div class="container">
+    <form>
+        <div class="form-group">
+            <label for="company">Title:</label>
+            <input type="text" class="form-control" [ngModelOptions]="{ standalone: true }" [(ngModel)]="
+          selectedJob.title
+        " id="company" />
+        </div>
+        <div class="form-group">
+            <label for="name">Description:</label>
+            <input type="text" class="form-control" [ngModelOptions]="{ standalone: true }"
+                [(ngModel)]="selectedJob.description" id="name" />
+        </div>
+        <div class="form-group">
+            <label for="client">Client:</label>
+            <select [(ngModel)]="selectedJob.client" [ngModelOptions]="{ standalone: true }" id="client">
+                <option value="Client A">Client A</option>
+                <option value="Client B">Client B</option>
+                <option value="Client C">Client C</option>
+                <option value="Client D">Client D</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="experience">Client Priority:</label>
+            <input type="number" min="1" class="form-control" [ngModelOptions]="{ standalone: true }"
+                [(ngModel)]="selectedJob.client_priority" id="experience" />
+        </div>
+        <div class="form-group">
+            <label for="date">Target Date :</label>
+            <input type="date" [ngModelOptions]="{ standalone: true }" [(ngModel)]="selectedJob.target_date"
+                class="form-control" id="date" />
+        </div>
+        <div class="form-group">
+            <label for="product_area">Product Area:</label>
+            <select [(ngModel)]="selectedJob.product_area" [ngModelOptions]="{ standalone: true }" id="product_area">
+                <option value="Policies">Policies</option>
+                <option value="Billing">Billing</option>
+                <option value="Claims">Claims</option>
+                <option value="Reports">Reports</option>
+            </select>
+        </div>
+    </form>
+    <button type="button" (click)="saveJob(selectedJob)" class="btn btn-primary">Save Details
+    </button>
+</div>

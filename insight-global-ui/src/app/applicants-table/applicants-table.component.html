@@ -1,0 +1,16 @@
+<div class="full-width u-margin-top-small" style="overflow: auto; max-height: calc(100% - 110px);white-space: nowrap;">
+    <table class="table table-bordered table-striped table-hover u-margin-top-medium full-width">
+        <thead>
+            <tr>
+                <th *ngFor="let header of headers">{{ header?.displayName }}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let row of tableData">
+                <td *ngFor="let header of headers" [ngSwitch]="header?.field">
+                    <span *ngSwitchDefault>{{ row[header?.field] || "N/A" }}</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
